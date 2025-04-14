@@ -1,7 +1,7 @@
 "use client";
 
+import { useGetUsersQuery } from "@/state/api";
 import Header from "../components/Header";
-import { useGetUsersQuery } from "../state/api";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [

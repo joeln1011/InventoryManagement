@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import { useCreateProductMutation, useGetProductsQuery } from "../state/api";
 import { PlusCircle, SearchIcon } from "lucide-react";
 import Header from "../components/Header";
 import Rating from "../components/Rating";
 import CreateProductModal from "./CreateProductModal";
+import { useCreateProductMutation, useGetProductsQuery } from "@/state/api";
 
 type ProductFormData = {
   name: string;

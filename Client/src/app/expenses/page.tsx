@@ -13,7 +13,7 @@ import Header from "../components/Header";
 import {
   ExpenseByCategorySummary,
   useGetExpensesByCategoryQuery,
-} from "../state/api";
+} from "@/state/api";
 
 type AggregatedDataItem = {
   name: string;
