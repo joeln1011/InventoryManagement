@@ -64,7 +64,7 @@ const CardExpenseSummary = () => {
                 <PieChart>
                   <Pie
                     data={expenseCategories}
-                    dataKey="amount"
+                    dataKey="value"
                     nameKey="name"
                     innerRadius={50}
                     outerRadius={60}
