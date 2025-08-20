@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Menu, Bell, Sun, Settings, Moon } from "lucide-react";
-import Link from "next/link";
-import { useAppDispatch, useAppSelector } from "@/app/redux";
-import { setIsDarkMode, setIsSidebarCollapsed } from "@/state";
-import Image from "next/image";
+import React from 'react';
+import { Menu, Bell, Sun, Settings, Moon } from 'lucide-react';
+import Link from 'next/link';
+import { useAppDispatch, useAppSelector } from '@/app/redux';
+import { setIsDarkMode, setIsSidebarCollapsed } from '@/state';
+import Image from 'next/image';
 
 function Navbar() {
   const dispatch = useAppDispatch();
@@ -67,11 +67,11 @@ function Navbar() {
           <hr className="w-0 h-7 border-solid border-l border-gray-300 mx-3" />
           <div className="flex items-center gap-3 cursor-pointer">
             <Image
-              src="https://s3-inventorymanagement-s3.s3.us-east-2.amazonaws.com/profile.jpg"
+              src="https://s3-inventorymanagement-s3.s3.us-east-2.amazonaws.com/hungnguyen.png"
               alt="Profile"
-              width={50}
-              height={50}
-              className="rounded-full h-full object-cover"
+              width={25}
+              height={25}
+              className="rounded-full object-cover"
             />
             <span className="font-semibold">Joel Nguyen</span>
           </div>

@@ -8,7 +8,7 @@ const CardPopularProducts = () => {
   const { data: dashboardMetrics, isLoading } = useGetDashboardMetricsQuery();
 
   return (
-    <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16">
+    <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl pb-16 dark:bg-black">
       {isLoading ? (
         <div className="m-5">Loading...</div>
       ) : (
@@ -34,7 +34,7 @@ const CardPopularProducts = () => {
                     className="rounded-lg w-14 h-14"
                   />
                   <div className="flex flex-col justify-between gap-1">
-                    <div className="font-bold text-gray-700">
+                    <div className="font-bold text-gray-700 dark:text-white">
                       {product.name}
                     </div>
                     <div className="flex text-sm items-center">

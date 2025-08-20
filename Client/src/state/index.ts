@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface InitialStateTypes {
   isSidebarCollapsed: boolean;
@@ -11,7 +11,7 @@ const initialState: InitialStateTypes = {
 };
 
 export const globalSlice = createSlice({
-  name: "global",
+  name: 'global',
   initialState,
   reducers: {
     setIsSidebarCollapsed: (state, action: PayloadAction<boolean>) => {

@@ -43,14 +43,17 @@ const Settings = () => {
           </thead>
           <tbody>
             {userSettings.map((setting, index) => (
-              <tr className="hover:bg-blue-50" key={setting.label}>
+              <tr
+                className="hover:bg-blue-50 dark:hover:bg-blue-600"
+                key={setting.label}
+              >
                 <td className="py-2 px-4">{setting.label}</td>
                 <td className="py-2 px-4">
                   {setting.type === "toggle" ? (
                     <label className="inline-flex relative items-center cursor-pointer">
                       <input
                         type="checkbox"
-                        className="sr-only peer"
+                        className="sr-only peer "
                         checked={setting.value as boolean}
                         onChange={() => handleToggleChange(index)}
                       />
@@ -65,7 +68,7 @@ const Settings = () => {
                   ) : (
                     <input
                       type="text"
-                      className="px-4 py-2 border rounded-lg text-gray-500 focus:outline-none focus:border-blue-500"
+                      className="px-4 py-2 border rounded-lg text-gray-500 focus:outline-none focus:border-blue-500 dark:text-white"
                       value={setting.value as string}
                       onChange={(e) => {
                         const settingsCopy = [...userSettings];
