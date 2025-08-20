@@ -1,7 +1,7 @@
-import { useGetDashboardMetricsQuery } from "@/state/api";
-import { TrendingDown, TrendingUp } from "lucide-react";
-import numeral from "numeral";
-import React from "react";
+import { useGetDashboardMetricsQuery } from '@/state/api';
+import { TrendingDown, TrendingUp } from 'lucide-react';
+import numeral from 'numeral';
+import React from 'react';
 import {
   Area,
   AreaChart,
@@ -9,7 +9,7 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
+} from 'recharts';
 
 const CardPurchaseSummary = () => {
   const { data, isLoading } = useGetDashboardMetricsQuery();
@@ -18,7 +18,7 @@ const CardPurchaseSummary = () => {
   const lastDataPoint = purchaseData[purchaseData.length - 1] || null;
 
   return (
-    <div className="flex flex-col justify-between row-span-2 xl:row-span-3 col-span-1 md:col-span-2 xl:col-span-1 bg-white shadow-md rounded-2xl">
+    <div className="flex flex-col justify-between row-span-2 xl:row-span-3 col-span-1 md:col-span-2 xl:col-span-1 bg-white shadow-md rounded-2xl dark:bg-black">
       {isLoading ? (
         <div className="m-5">Loading...</div>
       ) : (
@@ -39,15 +39,15 @@ const CardPurchaseSummary = () => {
               <div className="flex items-center">
                 <p className="text-2xl font-bold">
                   {lastDataPoint
-                    ? numeral(lastDataPoint.totalPurchased).format("$0.00a")
-                    : "0"}
+                    ? numeral(lastDataPoint.totalPurchased).format('$0.00a')
+                    : '0'}
                 </p>
                 {lastDataPoint && (
                   <p
                     className={`text-sm ${
                       lastDataPoint.changePercentage! >= 0
-                        ? "text-green-500"
-                        : "text-red-500"
+                        ? 'text-green-500'
+                        : 'text-red-500'
                     } flex ml-3`}
                   >
                     {lastDataPoint.changePercentage! >= 0 ? (
@@ -70,14 +70,14 @@ const CardPurchaseSummary = () => {
                 <YAxis tickLine={false} tick={false} axisLine={false} />
                 <Tooltip
                   formatter={(value: number) => [
-                    `$${value.toLocaleString("en")}`,
+                    `$${value.toLocaleString('en')}`,
                   ]}
                   labelFormatter={(label) => {
                     const date = new Date(label);
-                    return date.toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
+                    return date.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
                     });
                   }}
                 />

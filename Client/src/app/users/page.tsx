@@ -5,9 +5,24 @@ import Header from "../components/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
-  { field: "userId", headerName: "ID", width: 90 },
-  { field: "name", headerName: "Name", width: 200 },
-  { field: "email", headerName: "Email", width: 200 },
+  {
+    field: "userId",
+    headerName: "ID",
+    width: 90,
+    cellClassName: "dark:!text-white",
+  },
+  {
+    field: "name",
+    headerName: "Name",
+    width: 200,
+    cellClassName: "dark:!text-white",
+  },
+  {
+    field: "email",
+    headerName: "Email",
+    width: 200,
+    cellClassName: "dark:!text-white",
+  },
 ];
 
 const Users = () => {
@@ -28,7 +43,7 @@ const Users = () => {
         columns={columns}
         getRowId={(row) => row.userId}
         checkboxSelection
-        className="bg-white dark:bg-black shadow rounded-lg border border-gray-200 mt-5 text-gray-700 dark:!text-gray-200"
+        className="bg-white dark:bg-black shadow rounded-lg border border-gray-200 mt-5 text-gray-700"
       />
     </div>
   );

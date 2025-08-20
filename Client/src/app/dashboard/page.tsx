@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import {
   CheckCircle,
@@ -6,12 +6,12 @@ import {
   Tag,
   TrendingDown,
   TrendingUp,
-} from "lucide-react";
-import CardExpenseSummary from "./CardExpenseSummary";
-import CardPopularProducts from "./CardPopularProducts";
-import CardPurchaseSummary from "./CardPurchaseSummary";
-import CardSalesSummary from "./CardSalesSummary";
-import StatCard from "./StatCard";
+} from 'lucide-react';
+import CardExpenseSummary from './CardExpenseSummary';
+import CardPopularProducts from './CardPopularProducts';
+import CardPurchaseSummary from './CardPurchaseSummary';
+import CardSalesSummary from './CardSalesSummary';
+import StatCard from './StatCard';
 
 const Dashboard = () => {
   return (
@@ -26,14 +26,14 @@ const Dashboard = () => {
         dateRange="22 - 29 October 2024"
         details={[
           {
-            title: "Customer Grownth",
-            amount: "170.00",
+            title: 'Customer Grownth',
+            amount: '170.00',
             changePercentage: 131,
             IconComponent: TrendingUp,
           },
           {
-            title: "Expenses",
-            amount: "10.00",
+            title: 'Expenses',
+            amount: '10.00',
             changePercentage: -36,
             IconComponent: TrendingDown,
           },
@@ -45,14 +45,14 @@ const Dashboard = () => {
         dateRange="22 - 29 October 2024"
         details={[
           {
-            title: "Dues",
-            amount: "250.00",
+            title: 'Dues',
+            amount: '250.00',
             changePercentage: 131,
             IconComponent: TrendingUp,
           },
           {
-            title: "Pending Orders",
-            amount: "147.00",
+            title: 'Pending Orders',
+            amount: '147.00',
             changePercentage: -56,
             IconComponent: TrendingDown,
           },
@@ -64,14 +64,14 @@ const Dashboard = () => {
         dateRange="22 - 29 October 2024"
         details={[
           {
-            title: "Sales",
-            amount: "1000.00",
+            title: 'Sales',
+            amount: '1000.00',
             changePercentage: 20,
             IconComponent: TrendingUp,
           },
           {
-            title: "Discounts",
-            amount: "200.00",
+            title: 'Discounts',
+            amount: '200.00',
             changePercentage: -10,
             IconComponent: TrendingDown,
           },

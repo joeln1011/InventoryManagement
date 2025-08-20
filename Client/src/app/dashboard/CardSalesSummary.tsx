@@ -1,6 +1,6 @@
-import { useGetDashboardMetricsQuery } from "@/state/api";
-import { TrendingUp } from "lucide-react";
-import React, { useState } from "react";
+import { useGetDashboardMetricsQuery } from '@/state/api';
+import { TrendingUp } from 'lucide-react';
+import React, { useState } from 'react';
 import {
   Bar,
   BarChart,
@@ -9,13 +9,13 @@ import {
   Tooltip,
   XAxis,
   YAxis,
-} from "recharts";
+} from 'recharts';
 
 const CardSalesSummary = () => {
   const { data, isLoading, isError } = useGetDashboardMetricsQuery();
   const salesData = data?.salesSummary || [];
 
-  const [timeframe, setTimeframe] = useState("weekly");
+  const [timeframe, setTimeframe] = useState('weekly');
 
   const totalValueSum =
     salesData.reduce((acc, curr) => acc + curr.totalValue, 0) || 0;
@@ -30,19 +30,19 @@ const CardSalesSummary = () => {
   }, salesData[0] || {});
 
   const highestValueDate = highestValueData.date
-    ? new Date(highestValueData.date).toLocaleDateString("en-US", {
-        month: "numeric",
-        day: "numeric",
-        year: "2-digit",
+    ? new Date(highestValueData.date).toLocaleDateString('en-US', {
+        month: 'numeric',
+        day: 'numeric',
+        year: '2-digit',
       })
-    : "N/A";
+    : 'N/A';
 
   if (isError) {
     return <div className="m-5">Failed to fetch data</div>;
   }
 
   return (
-    <div className="row-span-3 xl:row-span-6 bg-white shadow-md rounded-2xl flex flex-col justify-between">
+    <div className="row-span-3 xl:row-span-6 bg-white dark:bg-black shadow-md rounded-2xl flex flex-col justify-between">
       {isLoading ? (
         <div className="m-5">Loading...</div>
       ) : (
@@ -63,7 +63,7 @@ const CardSalesSummary = () => {
                 <p className="text-xs text-gray-400">Value</p>
                 <span className="text-2xl font-extrabold">
                   $
-                  {(totalValueSum / 1000000).toLocaleString("en", {
+                  {(totalValueSum / 1000000).toLocaleString('en', {
                     maximumFractionDigits: 2,
                   })}
                   m
@@ -74,7 +74,6 @@ const CardSalesSummary = () => {
                 </span>
               </div>
               <select
-                className="shadow-sm border border-gray-300 bg-white p-2 rounded"
                 value={timeframe}
                 onChange={(e) => {
                   setTimeframe(e.target.value);
@@ -109,14 +108,14 @@ const CardSalesSummary = () => {
                 />
                 <Tooltip
                   formatter={(value: number) => [
-                    `$${value.toLocaleString("en")}`,
+                    `$${value.toLocaleString('en')}`,
                   ]}
                   labelFormatter={(label) => {
                     const date = new Date(label);
-                    return date.toLocaleDateString("en-US", {
-                      year: "numeric",
-                      month: "long",
-                      day: "numeric",
+                    return date.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
                     });
                   }}
                 />
@@ -136,7 +135,7 @@ const CardSalesSummary = () => {
             <div className="flex justify-between items-center mt-6 text-sm px-7 mb-4">
               <p>{salesData.length || 0} days</p>
               <p className="text-sm">
-                Highest Sales Date:{" "}
+                Highest Sales Date:{' '}
                 <span className="font-bold">{highestValueDate}</span>
               </p>
             </div>

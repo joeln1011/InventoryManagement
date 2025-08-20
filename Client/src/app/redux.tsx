@@ -1,15 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { useRef } from "react";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { useRef } from 'react';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import {
   TypedUseSelectorHook,
   useDispatch,
   useSelector,
   Provider,
-} from "react-redux";
-import globalReducer from "@/state";
-import { api } from "@/state/api";
-import { setupListeners } from "@reduxjs/toolkit/query";
+} from 'react-redux';
+import globalReducer from '@/state';
+import { api } from '@/state/api';
+import { setupListeners } from '@reduxjs/toolkit/query';
 
 import {
   persistStore,
@@ -20,9 +20,9 @@ import {
   PERSIST,
   PURGE,
   REGISTER,
-} from "redux-persist";
-import { PersistGate } from "redux-persist/integration/react";
-import createWebStorage from "redux-persist/lib/storage/createWebStorage";
+} from 'redux-persist';
+import { PersistGate } from 'redux-persist/integration/react';
+import createWebStorage from 'redux-persist/lib/storage/createWebStorage';
 
 /* REDUX PERSISTENCE */
 const createNoopStorage = () => {
@@ -42,14 +42,14 @@ const createNoopStorage = () => {
 };
 
 const storage =
-  typeof window === "undefined"
+  typeof window === 'undefined'
     ? createNoopStorage()
-    : createWebStorage("local");
+    : createWebStorage('local');
 
 const persistConfig = {
-  key: "root",
+  key: 'root',
   storage,
-  whitelist: ["global"],
+  whitelist: ['global'],
 };
 const rootReducer = combineReducers({
   global: globalReducer,
@@ -72,8 +72,8 @@ export const makeStore = () => {
 
 /* REDUX TYPES */
 export type AppStore = ReturnType<typeof makeStore>;
-export type RootState = ReturnType<AppStore["getState"]>;
-export type AppDispatch = AppStore["dispatch"];
+export type RootState = ReturnType<AppStore['getState']>;
+export type AppDispatch = AppStore['dispatch'];
 export const useAppDispatch = () => useDispatch<AppDispatch>();
 export const useAppSelector: TypedUseSelectorHook<RootState> = useSelector;
 

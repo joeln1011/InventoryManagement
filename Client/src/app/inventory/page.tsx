@@ -6,14 +6,25 @@ import Header from "../components/Header";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";
 
 const columns: GridColDef[] = [
-  { field: "productId", headerName: "ID", width: 90 },
-  { field: "name", headerName: "Product Name", width: 200 },
+  {
+    field: "productId",
+    headerName: "ID",
+    width: 90,
+    cellClassName: "dark:!text-white",
+  },
+  {
+    field: "name",
+    headerName: "Product Name",
+    width: 200,
+    cellClassName: "dark:!text-white",
+  },
   {
     field: "price",
     headerName: "Price",
     width: 110,
     type: "number",
     valueGetter: (value, row) => `${row.price}`,
+    cellClassName: "dark:!text-white",
   },
   {
     field: "rating",
@@ -21,12 +32,14 @@ const columns: GridColDef[] = [
     width: 110,
     type: "number",
     valueGetter: (value, row) => (row.rating ? row.rating : "N/A"),
+    cellClassName: "dark:!text-white",
   },
   {
     field: "stockQuantity",
     headerName: "Stock Quantity",
     width: 150,
     type: "number",
+    cellClassName: "dark:!text-white",
   },
 ];
 
@@ -48,7 +61,7 @@ const Inventory = () => {
         columns={columns}
         getRowId={(row) => row.productId}
         checkboxSelection
-        className="bg-white dark:bg-black shadow rounded-lg border border-gray-200 mt-5 text-gray-700 dark:!text-gray-200"
+        className="bg-white dark:bg-black shadow rounded-lg border border-gray-200 mt-5 text-gray-700"
       />
     </div>
   );
